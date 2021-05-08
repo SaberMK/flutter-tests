@@ -21,3 +21,11 @@ jobs:
     #- run: flutter test
     - run: flutter build apk
     - run: flutter build ios --release --no-codesign
+    - uses: actions/upload-artifact@v2
+      with:
+        name: Android app
+        path: ./build/app/outputs/flutter-apk/app-release.apk
+    - uses: actions/upload-artifact@v2
+      with:
+        name: IOS app
+        path: /Users/runner/work/flutter-tests/flutter-tests/build/ios/iphoneos/Runner.app
